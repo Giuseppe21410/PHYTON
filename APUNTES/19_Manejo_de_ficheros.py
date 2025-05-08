@@ -29,6 +29,22 @@ text_file.close() # Cierra el archivo.
 text_file = open("APUNTES/my_file.txt", "w") # Abre el archivo en modo escritura (w) y borra el contenido del archivo, ya que este modo sobreescribe el archivo.
 text_file.close() # Cierra el archivo.
 
+# os.remove("APUNTES/my_file.txt")  Elimina el archivo.
+
+
+## Archivos .json:
+
+import json
+
+json_file = open("APUNTES/my_file.json", "w")
+
+json_test= { # Los archivos .json, almacenan objetos de mapeo como los diccionarios.
+      "name":"Giuseppe",
+      "surname":"Fuentes Moreno",
+      "age":20,
+      "language":"Phyton"}
+
+json.dump(json_test,json_file)
 
 
 
