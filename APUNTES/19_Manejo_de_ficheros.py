@@ -44,9 +44,28 @@ json_test= { # Los archivos .json, almacenan objetos de mapeo como los diccionar
       "age":20,
       "language":"Phyton"}
 
-json.dump(json_test,json_file)
+json.dump(json_test,json_file,indent=1) # Abre un fichero con el contenido de json_test.
+
+json_file.close()
+
+with open("APUNTES/my_file.json") as my_other_file: # Abre el archivo con un nombre, y lee linea por linea el contenido.
+      for line in my_other_file:
+       print(line)
 
 
+json_dict =json.load(open("APUNTES/my_file.json")) # Carga el contenido del archivo en un diccionario.
+print(json_dict)
+
+# Archivos CSV: 
+
+import csv
+
+csv_file = open("Apuntes/my_file.csv", "w+") #Creamos un archivo y lo inicializamos en una variable.
+
+csv_writer= csv.writer(csv_file) # Inicializamos una variable que escriba el documento.
+
+csv_writer.writerow(["Name","Surname","Occupation"]) #Crea un row con tres columnas.
+csv_writer.writerow(["Giuseppe","Fuentes Moreno","Student"])
 
 
 
